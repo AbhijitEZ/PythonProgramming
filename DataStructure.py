@@ -60,3 +60,7 @@ queue.append(2)
 queue.append(3)
 queue.popleft()
 print(queue)
+
+# tuple
+tu = (1, 2, 3, 4, 'Abhijit')
+print(tu)
