@@ -1,3 +1,5 @@
+from pprint import pprint
+from array import array
 from collections import deque
 alpabets = ["a", "b", "c"]
 multipy = [0] * 5
@@ -61,6 +63,57 @@ queue.append(3)
 queue.popleft()
 print(queue)
 
+
 # tuple
 tu = (1, 2, 3, 4, 'Abhijit')
 print(tu)
+
+# array
+numbers = array("i", [1, 2, 3, 4])  # passing the typed
+print(numbers)
+
+# set -> to remove the duplicate
+numbers = [1, 1, 9, 3, 4]
+first = set(numbers)
+print(first)
+second = {5, 1, 6}
+third = second | first  # union
+third = first & second  # intersection
+third = first - second  # differnce
+third = first ^ second  # either first or secind but not both
+
+print(third)
+
+
+# Dictionary
+point = {"x": 1, "y": 2}
+point = dict(x=12, y=15)
+point["y"] = 16
+point["b"] = "Hello"
+
+
+if point.get("a") is None:
+    print("No a in the dict")
+del point["b"]
+print(point)
+
+for key, value in point.items():
+    print(key, value)
+
+# inpacking operator -> just like spread in JS
+values = [*range(5), *"hello"]
+print(values)
+
+# Exerise
+""" To find the character which has max count in sentence  """
+sentence = "This is the common interview question"
+char_seq = {}
+for char in sentence:
+    if char in char_seq:
+        char_seq[char] += 1
+
+    else:
+        char_seq[char] = 1
+
+char_seq_sorted = sorted(char_seq.items(), key=lambda kv: kv[1], reverse=True)
+print(char_seq_sorted[0])
